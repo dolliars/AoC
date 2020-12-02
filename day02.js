@@ -1001,25 +1001,31 @@ var pswdb = {
   user1000: {min: 17, max: 18, ltr:"b", psw: "jnlntbblbbqbkqmbbb"}
 };
 
-function pswIteration(pswdb) {
-  let cumul = 0;
+function checkValidPsw(pswdb) {
+  let validPsw = 0;
   for (const [key, value] of Object.entries(pswdb)) {
-    let min  = value.min;
-    let max  = value.max;
-    let ltr  = value.ltr;
-    let psw  = value.psw;
-    var ltrcount = 0;
-
-    for (var i = 0; i < psw.length; i++) {
-      if(psw.charAt(i) == ltr) {
-        ltrcount += 1;
+    let position1 = value.min; 
+    let position2 = value.max;
+    let pltr = value.ltr;
+    let psw = value.psw;
+    let ltrcount = 0;
+    let  letterAtP1 =  psw.charAt(position1-1);
+    let  letterAtP2 =  psw.charAt(position2-1);
+    //This console log made me see I was, of course, off by 1
+    console.log('pos1:', position1, 'pos2: ', position2, 'pltr: ', pltr, 'psw:', psw, 'P1:', letterAtP1,'P2:', letterAtP2 );
+        if(psw.charAt(position1-1) == pltr) { ///psw char is a letter ex b, same for plts
+      ltrcount = ltrcount + 1; 
+      if(psw.charAt(position2-1) == pltr) {
+        ltrcount = ltrcount + 1;
       }
+    } else if(psw.charAt(position2-1) == pltr) {
+      ltrcount = ltrcount + 1;
     }
-    if ((ltrcount >= min) && (ltrcount <= max) ) {
-      cumul += 1;
-      console.log('this cumul', cumul)
+    if(ltrcount === 1) {
+      validPsw +=1;
     }
   }
+  console.log('valid:', validPsw);
 }
 
-pswIteration(pswdb)
+checkValidPsw(pswdb)

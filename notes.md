@@ -55,3 +55,5 @@ no 0 index
 Exactly ONE of these positions must contain the given letter. 
 Other occurrences dont matter
 
+444 too high
+133 too low
