@@ -25,3 +25,33 @@ TIL:
 holy shit. I can't believe I submitted it right at midnight
 I can't believe my thing worked ahhh!
 It's the worst thing ever but omg.
+
+--------------
+Day 02
+Th OTCP making it difficult for the little man by changing psw allowed.
+db now corrupted
+must debug
+
+perline = policy + password
+policy = validity of letter use = lowest + highest letter use eg 1-3 a = a, aa, aaa
+
+data sample:
+7-8 d: sgmddfddjrtv
+
+min = 7
+max = 8
+val = d
+psw = sgmddfddjrtv
+
+Main question: how do i set up the data??
+... i've spent a lot of time trying to figure out how to format data
+
+I am a fool who reset an accumulator at every iteration -_-
+
+Part 2
+policy = 1 means 1st char, 2 means 2nd char, etc.
+no 0 index
+
+Exactly ONE of these positions must contain the given letter. 
+Other occurrences dont matter
+
