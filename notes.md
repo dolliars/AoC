@@ -97,3 +97,13 @@ anyway.. hope in happenstance perhaps.
 
 125? WRONG. output is looking much better tho.
 omg. I forgot I changed the data to check something.. nooo!
+Yes! This works.
+
+Part deux.
+Right 1, down 1.
+Right 3, down 1.
+Right 5, down 1.
+Right 7, down 1.
+Right 1, down 2.
+
+So. Is this how technical debt is acquired??
