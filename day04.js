@@ -39,16 +39,33 @@ var passports = {
 }
 
 function checkValid(passports){
-  required = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
-  optional = ['cid'];
+  let required = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
+  let optional = ['cid'];
+  let validQty = 0;
 
   for (const [key, value] of Object.entries(passports)) {
-    console.log(passports)
+    var adder = 0;
+    var keys = Object.keys(passports[key]);
+    var sortedKeys = keys.sort();
+    var sortedRequired = required.sort();
+
+    sortedRequired.forEach((element) => {
+      for (let i = 0; i < sortedKeys.length; i++) {
+        //console.log('key', sortedKeys[i], 'el: ' ,element);
+        if (sortedKeys[i] == element) {
+          adder = adder + 1;
+          //console.log('adder', adder);
+        }
+      }
+    })
+
+    //a dumb thing 
+    if (adder == 7) {
+      validQty = validQty + 1;
+    }
   }
+  console.log('valid: ', validQty);
 }
 
 checkValid(passports); //should yield 4 with test data
 
-//  for (const property in passports) {
-//    console.log(`${property}: ${passports[property]}`);
-//  }
