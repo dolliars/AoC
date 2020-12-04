@@ -107,3 +107,34 @@ Right 7, down 1.
 Right 1, down 2.
 
 So. Is this how technical debt is acquired??
+
+----------------------
+Day 4
+
+North Pole credentials instead of Passport
+
+byr (Birth Year)
+iyr (Issue Year)
+eyr (Expiration Year)
+hgt (Height)
+hcl (Hair Color)
+ecl (Eye Color)
+pid (Passport ID)
+cid (Country ID)
+
+missing only cid: it's fine
+
+how many valid passports?
+
+So, a lot of this is formating data i see. cool.
+
+It occurs to me that I should write down how i've gradually reformating the
+data.. It looked something like this (wrong order, on probably some are the
+wrong ones, but you get the gist)
+%s/\n/}{/g
+%s/{/{\r/g
+%s/\n\n/},\r\r{/
+%s/\r\r\r/\r/g 
+%s/},/\r},/
+%s/\s/\r/
+%s/\n\n\n/\r/g
