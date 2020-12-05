@@ -167,3 +167,6 @@ F || B for first 7 char
 
 
 oh! a binary tree. ok i see.
+
+this. went well, i must say
+
