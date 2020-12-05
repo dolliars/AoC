@@ -1,4 +1,4 @@
-var passports = {
+const passports = {
   passport1: { hgt:"176cm", iyr:2013, hcl:"#fffffd", ecl:"amb", byr:2000, eyr:2034, cid:89, pid:934693255 },
   passport2: { hcl:"#b5c3db", ecl:"grn", hgt:"155cm", pid:"#baec97", iyr:2017, byr:1939, eyr:2020 },
   passport3: { pid:526669252, eyr:1972, hgt:"152cm", ecl:"dne", byr:1960, hcl:"z", iyr:2023, },
@@ -56,8 +56,7 @@ var passports = {
   passport55: { iyr:2017, byr:1973, pid:293382118, hcl:"#341e13", cid:143, ecl:"hzl", hgt:"166cm", eyr:2022, },
   passport56: { pid:517102798, hcl:"f9d9dd", eyr:1933, iyr:2019, hgt:"164cm", byr:2017, ecl:"utc", },
   passport57: { eyr:2023, pid:757868802, hcl:"#18171d", cid:244, hgt:"156cm", ecl:"blu", iyr:2015, byr:1926, },
-  passport58: { eyr:2022, iyr:2020, hgt:"158cm", ecl:"grn", byr:1988, pid:979194751, hcl:"#888785",
-  },
+  passport58: { eyr:2022, iyr:2020, hgt:"158cm", ecl:"grn", byr:1988, pid:979194751, hcl:"#888785",},
   passport59: { eyr:2039, pid:3867868142, byr:1936, ecl:"dne", iyr:2022, hcl:"4b43b8", hgt:"115", cid:241, },
   passport60: { iyr:2015, eyr:2026, hcl:"#ceb3a1", pid:539099924, cid:234, ecl:"brn", byr:1920, hgt:"163cm", },
   passport61: { cid:259, iyr:2020, pid:949453818, eyr:2022, hgt:"181cm", byr:1997, ecl:"blu", hcl:"#18171d", },
@@ -256,10 +255,11 @@ var passports = {
   passport254: { cid:247, ecl:"grn", iyr:2014, hgt:"178cm", byr:1992, hcl:"#602927", eyr:2021, pid:678964478 },
   passport255: { iyr:2010, pid:623705680, ecl:"hzl", hgt:"181cm", byr:1980, hcl:"#341e13", eyr:2028 }
 }
-function checkValid(passports){
+function checkValid(passports) {
   let required = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'];
   let optional = ['cid'];
-  let validQty = 0;
+  let validQtyFields = 0;
+  let passportsToCheck = [];
 
   for (const [key, value] of Object.entries(passports)) {
     var adder = 0;
@@ -269,20 +269,18 @@ function checkValid(passports){
 
     sortedRequired.forEach((element) => {
       for (let i = 0; i < sortedKeys.length; i++) {
-        //console.log('key', sortedKeys[i], 'el: ' ,element);
         if (sortedKeys[i] == element) {
-          adder = adder + 1;
-          //console.log('adder', adder);
+          adder += + 1;
         }
       }
     })
 
-    //a dumb thing 
     if (adder == 7) {
-      validQty = validQty + 1;
+      validQtyFields += 1;
+      passportsToCheck.push(Object.keys(passports));
     }
   }
-  console.log('valid: ', validQty);
+  console.log('valid: ', validQtyFields);
 }
 
 checkValid(passports); //should yield 4 with test data
