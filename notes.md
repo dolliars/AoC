@@ -155,4 +155,15 @@ ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
 pid (Passport ID) - a nine-digit number, including leading zeroes.
 cid (Country ID) - ignored, missing or not.
 
+TIL: I need to get better at parsing data
 
+-----------------
+
+Day 5
+
+FBFBBFFRLR, where F means "front", B means "back", L means "left", and R means "right".
+F || B for first 7 char
+128 rows (0-127)
+
+
+oh! a binary tree. ok i see.
