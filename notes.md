@@ -170,3 +170,13 @@ oh! a binary tree. ok i see.
 
 this. went well, i must say
 
+Part 2
+
+omg. okay so that's what map does?!! amazing. How have I not understood this
+before?!
+
+ok, this second half is taking it out of me. Why is it so hard for me to figure
+out how to compare two arrays and get a new one with the difference??
+
+.. i... i can't.
+
