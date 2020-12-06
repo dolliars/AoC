@@ -179,4 +179,7 @@ ok, this second half is taking it out of me. Why is it so hard for me to figure
 out how to compare two arrays and get a new one with the difference??
 
 .. i... i can't.
+omg. i am an idiot.
 
+ok so here's the thing about ids: they should be unique. Which of course, I
+thought it was weird they weren't. But then the answer in part 1 worked..
