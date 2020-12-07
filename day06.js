@@ -2,6 +2,7 @@ let data = [[' gwlcpbtxmiezd xwlcpbtzimgdk tbiwmpcgzdxo ygzdbpjxncfwimt'], ['icb
 
 function totalYes(data) {
   let yes = 0;
+  console.log(data.length);
 
   data.forEach(function (element) {
     let string = element[0];
