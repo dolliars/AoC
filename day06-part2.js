@@ -1,12 +1,9 @@
 let data = [
-[['gwlcpbtxmiezd'], ['xwlcpbtzimgdk'], ['tbiwmpcgzdxo'], ['ygzdbpjxncfwimt']],
-[['icb'], ['xqhf']],
-[['mlpjsqwv'], ['dvjqsipz'], ['slqpvj']],
-[['waxcqvufpkeld'], ['udkvxbjaglpq'], ['gkxfpqvudhjl'], ['uivpdozsnrqkxmtl']],
-[['tzhercs'], ['cgxujw'], ['dianpfvbk']],
-[['vwynik'], ['obrut'], ['gmbza'], ['atm']],
-[['fvjnryuk'], ['scihpabjgdxo']],
-[['kpeir'], ['rikpe'], ['rpiek']]
+  [['abc']],
+  [['a'],['b'],['c']],
+  [['ab'],['ac']],
+  [['a'],['a'], ['a'], ['a']], 
+  [['b']]
 ];
 
 function unanimousYes(data) {
@@ -20,19 +17,12 @@ function unanimousYes(data) {
       string = string.split("");
       splicedLettersArray.push(string)
     }
-
-    console.log('new check');
-
-    for(let i = 0; i < splicedLettersArray.length - 1 ; i++) {
-      const filteredYes = splicedLettersArray[i].filter(value => splicedLettersArray[i+1].includes(value));
-      console.log(filteredYes);
-    }
-
+    
+    let filtered = splicedLettersArray.reduce((a,c) => a.filter(i => c.includes(i)));
+    yes = yes + filtered.length;
   });
+  return yes;
 }
 
-unanimousYes(data);
+console.log(unanimousYes(data));
 
-//const set1 = new Set([1, 2, 3, 4, 5]);
-//console.log(set1.has(1)); // expected output: true
-//console.log(set1.has(6));// expected output: false
