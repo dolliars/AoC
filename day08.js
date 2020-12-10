@@ -6,33 +6,34 @@ function assembler(data) {
   let indexTracker = [];
 
   for (let i = 0; i < data.length; i++) {
-    if(indexTracker.includes(i)) {
-      console.log('accum', accumulator);
-      break;
-    } else {
-      let command = data[i].substring(0,3);
-      let number = Number(data[i].replace( /^\D+/g, ''));
-      console.log('st:', data[i], '#:', number, 'i', i);
-      switch (command) {
-        case 'acc':
-          indexTracker.push(i);
-          if (data[i].includes('+')) {
-            accumulator = accumulator + number;
-          } else {
-            accumulator = accumulator + number;
-          } break;
-        case 'jmp':
-          indexTracker.push(i);
-          if (data[i].includes('+')) {
-            i = i + number;
-          } else {
-            i = i - number; 
-          } break;
-        case 'nop':
-          indexTracker.push(i);
-          break;
-      }
+    console.log('index: ', i);
+    if(indexTracker.includes(i)) { console.log('accum', accumulator); break;}
+
+    const command = data[i].substring(0,3);
+    let number = Number(data[i].replace( /^\D+/g, ''));
+    switch (command) {
+      case 'acc':
+        indexTracker.push(i);
+        if (data[i].includes('+')) {
+          accumulator = accumulator + number;
+        } else {
+          accumulator = accumulator - number;
+        } 
+        break;
+      case 'jmp':
+        indexTracker.push(i);
+        if (data[i].includes('+')) {
+          i = i + number - 1;
+        } else {
+          i = i - number - 1;
+        } 
+        break;
+      case 'nop':
+        indexTracker.push(i);
+        break;
+      default: console.log('something is wonrg');
     }
   }
+
 }
 assembler(data)
