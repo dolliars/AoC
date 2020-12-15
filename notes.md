@@ -183,3 +183,22 @@ omg. i am an idiot.
 
 ok so here's the thing about ids: they should be unique. Which of course, I
 thought it was weird they weren't. But then the answer in part 1 worked..
+
+---------
+
+Day 09
+
+Alright, got (busy/stressd) with work. Now on with it.
+
+1000 numbers in input.
+
+0-24 (first 25 numbers): preamble
+
+after preamble:
+25-999: each number SUM of any two of 25 immediately previous numbers
+
+The 2 numbers are:
+- different
+- might be more than one pair
+-
+
