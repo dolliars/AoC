@@ -202,3 +202,12 @@ The 2 numbers are:
 - might be more than one pair
 -
 
+-----
+
+Day 10
+
+aww man. I thought I'd get it on first submit.
+Oh well. It's not 2048 =(
+It's too low.
+
+Second try worked =))
