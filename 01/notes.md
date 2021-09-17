@@ -63,6 +63,18 @@ data set. If you know what your lowest number is, then you can check the
 difference between that and your objective sum. Or if you have a lot of numbers
 that are above your target, you could just skip those.
 
+In any case, here we're assuming:
+- the numbers are not in order
+- all the numbers are below the target sum
+
+The most obvious way to solve this is by nesting loops. And that's what I did
+for both part 1 and 2. 
+
+Asymptotic efficiency of part 1: O(n²)
+Asymptotic efficiency of part 2: O(n3³)
+
+So we've got a quadratic algorithm, and a cubic algorithm.
+
 ------------------------------------
 
 TODO
