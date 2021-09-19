@@ -71,7 +71,7 @@ The most obvious way to solve this is by nesting loops. And that's what I did
 for both part 1 and 2. 
 
 Asymptotic efficiency of part 1: O(n²)
-Asymptotic efficiency of part 2: O(n3³)
+Asymptotic efficiency of part 2: O(n³)
 
 So we've got a quadratic algorithm, and a cubic algorithm.
 
@@ -83,3 +83,25 @@ TODO
     multiplication
   - remove conditional expression out of function
   - Return only `PASS` or `FAIL` string as oppose to having the console in it
+
+------------------------------------
+
+Ok so at this point, we know that the algorithm is **super** inefficient. Bad
+for part 1, and even worse for part 2. The separation of concerns, i.e. adder,
+multiplier, and tests are mostly useful for getting those parts out of my brain
+but aren't necessary.
+
+So how can we make this more efficient? Moving it from quadratic time to linear?
+We can try with a hash table. I wasn't sure how to go about it but after having
+some discussions, it was brought up to me that you could generate a hash table
+using the expression that's found in the inner loop.
+
+Generally what we're looking for is: `x + y = 2020`. But that is the same as
+saying `2020 - x = y`.
+
+After this was made apparent, I still struggled though. I've managed to come to
+a solution that works for part 1 but it returns the result twice. Still, the
+time complexity goes from O(n²) to O(2n), which I *believe* just turns in O(n).
+I think it's because we're just interested in what it generally means, and in
+this case it just means the complexity is linear.
+
