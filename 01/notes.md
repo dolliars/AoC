@@ -96,12 +96,26 @@ We can try with a hash table. I wasn't sure how to go about it but after having
 some discussions, it was brought up to me that you could generate a hash table
 using the expression that's found in the inner loop.
 
-Generally what we're looking for is: `x + y = 2020`. But that is the same as
-saying `2020 - x = y`.
+Generally what we're looking for is: `x + y = 2020`. But instead of that we can
+do the inverse operation: `2020 - x = y`.
 
 After this was made apparent, I still struggled though. I've managed to come to
-a solution that works for part 1 but it returns the result twice. Still, the
-time complexity goes from O(n²) to O(2n), which I *believe* just turns in O(n).
-I think it's because we're just interested in what it generally means, and in
-this case it just means the complexity is linear.
+a solution that works for part 1 but it returns the result twice (oh! ok so to
+prevent this, I can just add a `return` in the `if` that's checking the map).
+Still, the time complexity goes from O(n²) to ~~O(2n), which I *believe* just
+turns in~~ O(n). We're just interested in what it generally means, and in this
+case it just means the complexity is linear.
+
+------------------------------------
+
+So I've been trying to wrap my head around how to improve part 2 using a
+hashmap. I'm missing some logical piece. It's obvious that we have all the
+necessary values. But how do I coax them into the answer.
+
+Oh. So I've been thinking of this wrong. I can't get the value i'm looking for
+with way I'm setting up the map. Because if I do `2020 - x - y`, I'll always get
+`0`. Dang. I didn't realize this sooner unfortunately.
+
+I also got really hung up on attempting to get the complexity down to O(n), but
+it seems like O(n²) is the best we can do.
 
